@@ -16,10 +16,10 @@ class Service::SkyDeskProjects < Service::HttpPost
     
     http.headers['Authorization'] = "Token #{token}"
 
-    url = "https://projects.skydesk.jp/serviceHook",
-      :pId => data['project_id'],
-      :authtoken => data['token'],
-      :scope => "projectsapi"
-    deliver url
+    url = "https://projects.skydesk.jp/serviceHook"
+    deliver url,
+      :pId       => data['project_id'],
+      :scope     => "projectsapi",
+      :authtoken => data['token']
   end
 end
